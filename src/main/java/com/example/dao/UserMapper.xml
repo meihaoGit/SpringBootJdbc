@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.UserMapper">
+    <select id="getUserName" resultType="String">
+        SELECT SHOKU_NAME
+        FROM ZM_SHOKKEN
+        WHERE NENDO = 2012
+              AND SHOKUIN = 0001080229
+    </select>
+</mapper>
