@@ -3,8 +3,15 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
     <!-- Spring MVC -->
-    <logger name="org.springframework.web" level="DEBUG"/>
+    <logger name="org.springframework.web" level="VERBOSE"/>
 
+    <!-- log4jdbc-log4j2 -->
+    <logger name="jdbc.sqlonly" level="DEBUG"/>
+    <logger name="jdbc.sqltiming" level="INFO"/>
+    <logger name="jdbc.audit" level="INFO"/>
+    <logger name="jdbc.resultset" level="ERROR"/>
+    <logger name="jdbc.resultsettable" level="ERROR"/>
+    <logger name="jdbc.connection" level="DEBUG"/>
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>${CONSOLE_LOG_PATTERN}</pattern>
@@ -24,6 +31,6 @@
         </rollingPolicy>
     </appender>
     <root level="INFO">
-        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
     </root>
 </configuration>
